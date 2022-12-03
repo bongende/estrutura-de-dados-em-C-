@@ -1,5 +1,5 @@
-#ifndef PILIA_DIN_H
-#define PILIA_DIN_H
+#ifndef PILHA_DIN_H
+#define PILHA_DIN_H
 
 typedef int TipoItem;
 
@@ -8,11 +8,11 @@ struct No {
     No *proximo;
 };
 
-class Pilia_dinamica  {
+class Pilha_dinamica  {
     No *topo;
     public:
-        Pilia_dinamica();
-        ~Pilia_dinamica();
+        Pilha_dinamica();
+        ~Pilha_dinamica();
         bool esta_vazio();
         bool esta_cheio();
         void inserir(TipoItem item);

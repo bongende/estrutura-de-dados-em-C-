@@ -1,10 +1,10 @@
 #include <iostream>
-#include "pilia_din.h"
+#include "pilha_din.h"
 
 using namespace std;
 
 int main() {
-    Pilia_dinamica pilia1;
+    Pilha_dinamica pilia1;
     cout << "esta  vazio :\t" << pilia1.esta_vazio() << endl;
     cout << "=============================" << endl;
     for (int i = 0; i<20;++i) {

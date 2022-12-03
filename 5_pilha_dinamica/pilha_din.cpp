@@ -1,13 +1,13 @@
 #include <iostream>
 #include <cstddef>
-#include "pilia_din.h"
+#include "pilha_din.h"
 
 using namespace std;
 
-Pilia_dinamica::Pilia_dinamica() {
+Pilha_dinamica::Pilha_dinamica() {
     topo = NULL;
 }
-Pilia_dinamica::~Pilia_dinamica() {
+Pilha_dinamica::~Pilha_dinamica() {
     No *temp;
     while (temp) {
         temp = topo;
@@ -15,10 +15,10 @@ Pilia_dinamica::~Pilia_dinamica() {
         delete temp;
     }
 }
-bool Pilia_dinamica::esta_vazio() {
+bool Pilha_dinamica::esta_vazio() {
     return topo == NULL;
 }
-bool Pilia_dinamica::esta_cheio() {
+bool Pilha_dinamica::esta_cheio() {
     No *no_novo;
     try {
         no_novo = new No();
@@ -28,7 +28,7 @@ bool Pilia_dinamica::esta_cheio() {
         return true;
     }
 }
-void Pilia_dinamica::inserir(TipoItem item) {
+void Pilha_dinamica::inserir(TipoItem item) {
     if (esta_cheio()) {
         printf("A Pilia esta chaia, imossivel inserir!");
         } else {
@@ -38,7 +38,7 @@ void Pilia_dinamica::inserir(TipoItem item) {
             topo = no_novo;
         }
 }
-TipoItem Pilia_dinamica::remover() {
+TipoItem Pilha_dinamica::remover() {
     if (esta_vazio()) {
         printf("A pilia esta vazia, impossivel remover!");
         return  0;
@@ -50,7 +50,7 @@ TipoItem Pilia_dinamica::remover() {
         return item;
     }
 }
-void Pilia_dinamica::imprimir() {
+void Pilha_dinamica::imprimir() {
     No *temp = topo;
     printf("Pilia dinamica [ ");
     while (temp) {
