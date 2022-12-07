@@ -24,16 +24,19 @@ bool Tabela_hash::esta_cheio() {
     return quant_itens == max_itens;
 }
 
-// bool esta_vazio();
 int Tabela_hash::obter_tamanho_atual() {
     return quant_itens;
 }
 
 void Tabela_hash::inserir(Aluno aluno) {
-    int local = funcao_hash(aluno);
-    while(estrutura[local].obter_ra() > 0) local = (local + 1) % max_posisoes ;
-    estrutura[local] = aluno;
-    ++quant_itens;
+    if (esta_cheio()) {
+        printf("A tabela esta cheia, impossivel inserir!");
+    } else {
+        int local = funcao_hash(aluno);
+        while(estrutura[local].obter_ra() > 0) local = (local + 1) % max_posisoes ;
+        estrutura[local] = aluno;
+        ++quant_itens;
+    }
 }
 
 void Tabela_hash::deletar(Aluno aluno) {
